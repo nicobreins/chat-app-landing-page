@@ -21,7 +21,7 @@ body {
 .container {
   min-height: 100vh;
   min-width: 100vw;
-  background-color: var(--Light-Grayish-Violet);
+  background-color: rgba(255, 255, 255, 0.2);
   overflow: hidden;
   position: relative;
   display: flex;
