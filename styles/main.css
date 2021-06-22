@@ -1,0 +1,284 @@
+:root {
+  --Pale-Violet: hsl(276, 100%, 81%) ;
+  --Moderate-Violet: hsl(276, 55%, 52%);
+  --Desaturated-Dark-Violet: hsl(271, 15%, 43%);
+  --Grayish-Blue: hsl(206, 6%, 79%);
+  --Very-Dark-Desaturated-Violet: hsl(271, 36%, 24%);
+  --Dark-Grayish-Violet: hsl(270, 7%, 64%);
+  --Light-Violet: hsl(264, 100%, 61%);
+  --Light-Magenta: hsl(293, 100%, 63%);
+  --White: hsl(0, 0%, 100%);
+  --Light-Grayish-Violet: hsl(270, 20%, 96%);
+  --Very-Dark-Desaturated-Violet: hsl(271, 36%, 24%);
+  --Very-Light-Magenta: hsl(289, 100%, 72%);
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+}
+
+.container {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: var(--Light-Grayish-Violet);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container::before, .container::after {
+  content: "";
+  display: inline-block;
+  height: 90vh;
+  width: 32%;
+  position: absolute;
+  background-image: linear-gradient(to bottom left, var(--Light-Magenta), var(--Light-Violet) 50%);
+}
+@media (max-width: 450px) {
+  .container::before, .container::after {
+    height: 60vh;
+    width: 450px;
+  }
+}
+.container::before {
+  top: 0;
+  left: -6vw;
+  border-radius: 0vh 0vh 50vh 50vh;
+}
+@media (max-width: 450px) {
+  .container::before {
+    left: -70%;
+  }
+}
+.container::after {
+  right: -6vw;
+  bottom: 0;
+  border-radius: 50vh 50vh 0vh 0vh;
+  opacity: 0.03;
+}
+@media (max-width: 450px) {
+  .container::after {
+    display: none;
+  }
+}
+.container .wrapper {
+  position: relative;
+  z-index: 2;
+  max-width: 57vw;
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+@media (max-width: 768px) {
+  .container .wrapper {
+    max-width: 90vw;
+  }
+}
+@media (max-width: 450px) {
+  .container .wrapper {
+    flex-direction: column;
+  }
+}
+.container .wrapper .phone-container {
+  flex: 6;
+}
+.container .wrapper .phone-container .phone {
+  width: 240px;
+  height: 500px;
+  background-color: #fff;
+  border-radius: 32px;
+  padding: 0.6rem;
+  box-shadow: 5px 10px 30px 5px rgba(58, 25, 80, 0.1);
+}
+.container .wrapper .phone-container .phone .phone-screen {
+  background-color: var(--Light-Grayish-Violet);
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .wrapper .phone-container .phone .phone-screen::before {
+  content: "";
+  display: inline-block;
+  width: 60%;
+  height: 20px;
+  background-color: #fff;
+  position: absolute;
+  border-radius: 0px 0px 16px 16px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.container .wrapper .phone-container .phone .app-header {
+  background-image: linear-gradient(to left, var(--Light-Magenta), var(--Light-Violet));
+  border-radius: 0px 0px 8px 8px;
+  padding: 0.8rem;
+  padding-top: 2rem;
+  justify-content: space-between;
+}
+.container .wrapper .phone-container .phone .app-header, .container .wrapper .phone-container .phone .app-header .header-right {
+  display: flex;
+  align-items: center;
+}
+.container .wrapper .phone-container .phone .app-header .user-img {
+  background-color: var(--Desaturated-Dark-Violet);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1.5px solid #fff;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .wrapper .phone-container .phone .app-header .user-img img {
+  width: 110%;
+}
+.container .wrapper .phone-container .phone .app-header .user-details {
+  padding-left: 0.5rem;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+}
+.container .wrapper .phone-container .phone .app-header .user-details p, .container .wrapper .phone-container .phone .app-header .user-details span {
+  color: var(--White);
+}
+.container .wrapper .phone-container .phone .app-header .user-details p {
+  font-size: 0.7rem;
+  margin: 0;
+  font-weight: 500;
+  padding-bottom: 0.2rem;
+}
+.container .wrapper .phone-container .phone .app-header .user-details span {
+  font-size: 0.5rem;
+  opacity: 0.6;
+}
+.container .wrapper .phone-container .phone .app-header i {
+  font-size: 0.8rem;
+  color: #fff;
+  opacity: 0.9;
+}
+.container .wrapper .phone-container .phone .app-chat {
+  padding: 0.6rem;
+  display: grid;
+  justify-self: flex-end;
+}
+.container .wrapper .phone-container .phone .app-chat .message {
+  padding: 0.4rem 0.5rem;
+  font-size: 0.5rem;
+  border-radius: 8px 8px 8px 3px;
+  background-color: rgba(146, 65, 200, 0.08);
+  color: var(--Moderate-Violet);
+  margin-bottom: 0.5rem;
+  max-width: 50%;
+  line-height: 0.7rem;
+}
+.container .wrapper .phone-container .phone .app-chat .message.right {
+  background-color: #fff;
+  color: var(--Desaturated-Dark-Violet);
+  border-radius: 8px 8px 3px 8px;
+  justify-self: flex-end;
+  box-shadow: 2px 5px 6px rgba(113, 48, 156, 0.08);
+}
+.container .wrapper .phone-container .phone .app-chat .message.rate {
+  background-image: linear-gradient(to left, var(--Light-Magenta), var(--Light-Violet));
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.6rem 1rem;
+  max-width: 55%;
+}
+.container .wrapper .phone-container .phone .app-chat .message.rate::before {
+  content: "";
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  vertical-align: middle;
+  border-radius: 50%;
+  border: 0.5px solid #fff;
+  opacity: 0.5;
+  margin-right: 0.5rem;
+  margin-left: -0.5rem;
+}
+.container .wrapper .phone-container .phone .app-chat .message.rate span {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: white;
+  float: right;
+}
+.container .wrapper .phone-container .phone .app-chat .msg-w-img {
+  display: flex;
+  justify-self: flex-end;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+.container .wrapper .phone-container .phone .app-chat .msg-w-img img {
+  height: 40px;
+  padding: 0;
+  background: none;
+  margin-left: 0.5rem;
+  border-radius: 8px;
+}
+.container .wrapper .phone-container .phone .msg-box {
+  padding: 0.6rem;
+  position: relative;
+}
+.container .wrapper .phone-container .phone .msg-box input {
+  border-radius: 32px;
+  border: none;
+  padding: 0.7rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 0.7rem;
+}
+.container .wrapper .phone-container .phone .msg-box input::-moz-placeholder {
+  color: var(--Grayish-Blue);
+  font-size: 0.7rem;
+}
+.container .wrapper .phone-container .phone .msg-box input:-ms-input-placeholder {
+  color: var(--Grayish-Blue);
+  font-size: 0.7rem;
+}
+.container .wrapper .phone-container .phone .msg-box input::placeholder {
+  color: var(--Grayish-Blue);
+  font-size: 0.7rem;
+}
+.container .wrapper .phone-container .phone .msg-box button {
+  position: absolute;
+  right: 1rem;
+  border: none;
+  outline: none;
+  background: var(--Very-Dark-Desaturated-Violet);
+  border-radius: 50%;
+  color: #fff;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: inline-block;
+  font-size: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.container .wrapper .content {
+  flex: 7;
+}
+@media (max-width: 450px) {
+  .container .wrapper .content {
+    text-align: center;
+    padding: 1rem;
+  }
+}
+.container .wrapper .content h1 {
+  color: var(--Very-Dark-Desaturated-Violet);
+  font-weight: 500;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.container .wrapper .content p {
+  color: var(--Dark-Grayish-Violet);
+  line-height: 1.7rem;
+}/*# sourceMappingURL=main.css.map */
